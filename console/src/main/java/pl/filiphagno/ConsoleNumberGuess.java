@@ -24,7 +24,7 @@ public class ConsoleNumberGuess {
 
     @EventListener(ContextRefreshedEvent.class)
     public void onApplicationEvent() {
-        log.info("Container ready to use");
+        log.info("Container ready to use!");
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
