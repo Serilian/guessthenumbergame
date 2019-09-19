@@ -6,5 +6,5 @@ pl\filiphagno\NumberGenerator.class
 pl\filiphagno\Game.class
 pl\filiphagno\GuessCount.class
 pl\filiphagno\NumberGeneratorImpl.class
-pl\filiphagno\config\AppConfig.class
+pl\filiphagno\MinNumber.class
 pl\filiphagno\MaxNumber.class
