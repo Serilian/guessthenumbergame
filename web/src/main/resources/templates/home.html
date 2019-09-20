@@ -9,8 +9,10 @@
 </head>
 <body>
 <div align="center">
-    <h2>Welcome to Thymeleaf Number Game</h2>
-    <a th:text="Play" th:href="play" target="_blank">Click to Play</a>
+    <h2>Welcome to Guess The Number Game</h2>
+    <a th:text="Play" th:href="@{__${T(pl.filiphagno.util.GameMappings).PLAY}__}">
+        Click to Play
+    </a>
 </div>
 </body>
 </html>

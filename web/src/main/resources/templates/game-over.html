@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" style="height: 96vh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game-Over</title>
+</head>
+<body style="height: 100%">
+<div style="height: 100%; text-align: center; display:flex;  width: 1000px; margin: 0 auto; flex-direction: column; justify-content: space-between; align-items: center">
+    <div>
+        <h1>Guess The Number Game</h1>
+        <h2>Game Over</h2>
+        <h3 th:text="${__${T(pl.filiphagno.util.AttributeNames).RESULT_MESSAGE}__}">Result message</h3>
+        <h3><a th:href="@{__${T(pl.filiphagno.util.GameMappings).RESET}__}">Play Again</a></h3>
+        <h3><a href="/">Home</a></h3>
+    </div>
+    <footer style="justify-self: flex-end">Created by Filip Hagno - filiphagno.pl</footer>
+</div>
+</body>
+</html>
