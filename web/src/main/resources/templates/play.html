@@ -1,15 +1,11 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" style="height: 98vh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guess the number</title>
+<head th:replace="~{fragments/head.html::headFragment}">
 </head>
 <body style="height: 100%">
 <div style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-between">
-    <div><h3>Guess the number</h3>
+    <div>
+        <h1 th:replace="~{fragments/title.html::titleFragment}">Title</h1>
         <h4 th:text="${__${T(pl.filiphagno.util.AttributeNames).MAIN_MESSAGE}__}">Main Message</h4>
         <h4 th:text="${__${T(pl.filiphagno.util.AttributeNames).RESULT_MESSAGE}__}">Result message</h4>
         <form th:action="@{__${T(pl.filiphagno.util.GameMappings).PLAY}__}" method="post">
@@ -18,7 +14,7 @@
             <input type="submit" value="Submit"/>
         </form>
     </div>
-    <footer style="justify-self: flex-end">Created by Filip Hagno - filiphagno.pl</footer>
+    <footer th:replace="~{fragments/footer.html::footerFragment}"></footer>
 </div>
 </body>
 </html>
