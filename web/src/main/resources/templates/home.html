@@ -1,17 +1,17 @@
 <!doctype html>
 <html style="height: 96vh" lang="en" xmlns:th="http://www.thymeleaf.org">
-<head  th:replace="~{fragments/head.html::headFragment}">
+<head  id="headId">
 </head>
 <body style="height: 100%">
 <div style="height: 100%; text-align: center; display:flex;  width: 1000px; margin: 0 auto; flex-direction: column; justify-content: space-between; align-items: center">
     <div>
-        <h1 th:replace="~{fragments/title.html::titleFragment}">Title</h1>
-        <a th:text="Play" th:href="@{__${T(pl.filiphagno.util.GameMappings).PLAY}__}">
+        <h1 id="title">Title</h1>
+        <a id="play">
             Click to Play
         </a>
     </div>
     <div>
-        <footer th:replace="~{fragments/footer.html::footerFragment}"></footer>
+        <footer id="footer"></footer>
     </div>
 </div>
 </body>

@@ -1,0 +1,16 @@
+<thlogic>
+    <attr
+            th:replace="~{fragments/head.html::headFragment}"
+            sel="#headId"
+    />
+    <attr sel="#mainMessage"
+          th:text="${__${T(pl.filiphagno.util.AttributeNames).MAIN_MESSAGE}__}"/>
+    <attr sel="#resultMessage"
+          th:text="${__${T(pl.filiphagno.util.AttributeNames).RESULT_MESSAGE}__}"/>
+    <attr sel="#reset"
+          th:href="@{__${T(pl.filiphagno.util.GameMappings).RESET}__}"/>
+    <attr sel="#footer"
+          th:replace="~{fragments/footer.html::footerFragment}"/>
+    <attr sel="#title"
+          th:replace="~{fragments/title.html::titleFragment}"/>
+</thlogic>
