@@ -15,6 +15,13 @@ public class MessageGeneratorImpl implements MessageGenerator {
     private Game game;
     private final MessageSource messageSource;
     private final String MAIN_MESSAGE = "game.main.message" ;
+    private final String RESULT_WON = "game.result.won" ;
+    private final String RESULT_LOST = "game.result.lost" ;
+    private final String RESULT_INVALID_RANGE = "game.result.invalid-range" ;
+    private final String RESULT_FIRST_GUESS = "game.result.first-guess" ;
+    private final String RESULT_HIGHER = "game.higher" ;
+    private final String RESULT_LOWER = "game.lower" ;
+    private final String RESULT_GUESSES_LEST = "game.guesses-left" ;
 
     @Autowired
     public MessageGeneratorImpl(Game game, MessageSource messageSource) {
@@ -30,19 +37,19 @@ public class MessageGeneratorImpl implements MessageGenerator {
     @Override
     public String getResultMessage() {
         if (game.isGameWon()) {
-            return "You Won!! " + "The number was: " + game.getNumber();
+            return getMessage(RESULT_WON, game.getNumber());
         } else if (game.isGameLost()) {
-            return "You Lost!! " + "The number was: " + game.getNumber();
+            return getMessage(RESULT_LOST, game.getNumber());
         } else if (!game.isValidNumberRange()) {
-            return "Invalid number range";
+            return getMessage(RESULT_INVALID_RANGE);
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
-            return "What is your first guess?";
+            return getMessage(RESULT_FIRST_GUESS);
         } else {
-            String direction = "Lower";
+            String direction = getMessage(RESULT_LOWER);
             if (game.getGuess() < game.getNumber()) {
-                direction = "Higher";
+                direction = getMessage(RESULT_HIGHER);
             }
-            return direction + "! You have " + game.getRemainingGuesses() + " guesses left";
+            return direction + getMessage(RESULT_GUESSES_LEST, game.getRemainingGuesses());
         }
     }
 
