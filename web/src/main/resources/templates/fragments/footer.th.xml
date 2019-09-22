@@ -1,0 +1,6 @@
+<thlogic>
+<attr sel="#footer"
+      th:fragment="footer"/>
+    <attr sel="#created-by"
+          th:text="|#{game.createdBy} Filip Hagno-filiphagno.pl|" />
+</thlogic>

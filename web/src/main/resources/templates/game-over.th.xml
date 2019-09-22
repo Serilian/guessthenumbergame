@@ -8,9 +8,14 @@
     <attr sel="#resultMessage"
           th:text="${__${T(pl.filiphagno.util.AttributeNames).RESULT_MESSAGE}__}"/>
     <attr sel="#reset"
-          th:href="@{__${T(pl.filiphagno.util.GameMappings).RESET}__}"/>
+          th:href="@{__${T(pl.filiphagno.util.GameMappings).RESET}__}"
+            th:text="#{game.play-again}"
+    />
     <attr sel="#footer"
-          th:replace="~{fragments/footer.html::footerFragment}"/>
+          th:replace="~{fragments/footer.html::footer}"/>
     <attr sel="#title"
           th:replace="~{fragments/title.html::titleFragment}"/>
+
+    <attr sel="#game-over"
+          th:text="#{game.game-over}"/>
 </thlogic>

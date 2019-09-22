@@ -10,7 +10,7 @@
     <attr sel="#form"
           th:action="@{__${T(pl.filiphagno.util.GameMappings).PLAY}__}"/>
     <attr sel="#footer"
-          th:replace="~{fragments/footer.html::footerFragment}"/>
+          th:replace="~{fragments/footer.html::footer}"/>
     <attr sel="#title"
           th:replace="~{fragments/title.html::titleFragment}"/>
     <attr sel="#submit"

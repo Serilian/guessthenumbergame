@@ -8,7 +8,7 @@
     <attr sel="#play"
           th:text="Play"/>
     <attr sel="#footer"
-          th:replace="~{fragments/footer.html::footerFragment}"/>
+          th:replace="~{fragments/footer.html::footer}"/>
     <attr sel="#title"
           th:replace="~{fragments/title.html::titleFragment}"/>
 </thlogic>
