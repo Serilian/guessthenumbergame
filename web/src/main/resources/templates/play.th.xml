@@ -13,4 +13,8 @@
           th:replace="~{fragments/footer.html::footerFragment}"/>
     <attr sel="#title"
           th:replace="~{fragments/title.html::titleFragment}"/>
+    <attr sel="#submit"
+          th:value="#{game.submit}"/>
+    <attr sel="#label"
+          th:text="#{game.label}"/>
 </thlogic>
