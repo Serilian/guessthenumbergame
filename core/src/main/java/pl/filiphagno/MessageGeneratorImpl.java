@@ -2,6 +2,8 @@ package pl.filiphagno;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,15 +13,18 @@ import javax.annotation.PostConstruct;
 public class MessageGeneratorImpl implements MessageGenerator {
 
     private Game game;
+    private final MessageSource messageSource;
+    private final String MAIN_MESSAGE = "game.main.message" ;
 
     @Autowired
-    public MessageGeneratorImpl(Game game) {
+    public MessageGeneratorImpl(Game game, MessageSource messageSource) {
         this.game = game;
+        this.messageSource = messageSource;
     }
 
     @Override
     public String getMainMessage() {
-        return "Number is between: " + game.getSmallest() + " and " + game.getLargest() + ". \nCan you guess it?";
+        return getMessage(MAIN_MESSAGE, game.getSmallest(), game.getLargest());
     }
 
     @Override
@@ -44,6 +49,10 @@ public class MessageGeneratorImpl implements MessageGenerator {
     @PostConstruct
     private void init() {
         log.info("Instantiated Message Generator, game is {}", game);
+    }
+
+    private String getMessage(String code, Object... args) {
+        return messageSource.getMessage(code, args, LocaleContextHolder.getLocale());
     }
 
 }
